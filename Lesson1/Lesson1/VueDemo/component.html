@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	</head>
+
+	<body>
+		<div id="app">
+			<ul>
+				<template v-for='item in list'>
+					<todo-item v-bind:todo='item'></todo-item>
+				</template>
+			</ul>
+		</div>
+		<script src="https://unpkg.com/vue@2.3.4/dist/vue.min.js"></script>
+		<script type="text/javascript">
+			Vue.component('todo-item', {
+				props: ['todo'],
+				template: '<li>{{ todo.text }}</li>'
+			})
+			var app = new Vue({
+				el: '#app',
+				data: {
+					list: [
+						{text: '1'},
+						{text: '2'},
+						{text: '3'}
+					]
+				}
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+		<link rel="stylesheet" href="fonts/iconfont.css" />
+	</head>
+	<style type="text/css">
+		.iconfont{
+			font-size:24px;
+		}
+		.mint-cell-allow-right{
+			display: none;
+		}
+		.icon-pengyouquan{
+			margin:0 -7px;
+		}
+		.mint-tabbar > .mint-tab-item.is-selected{
+			background: none;
+			color:#1aad19
+		}
+		.mint-cell-text {
+		  position: relative;
+		  top: -4px;
+		  padding-left:10px;
+		}
+		body{
+			margin:0;
+		}
+		html{
+		  background: #eaeaea;
+		}
+	</style>
+	<body>
+		<div id="app">
+			<mt-tab-container class="page-tabbar-container" v-model="selected">
+				
+				<mt-tab-container-item id="message">
+					<mt-cell v-for="(n, index) in 12" style='padding:10px 0' is-link>
+						<img slot='icon' src="http://iph.href.lu/60x60" width="60" height="60" style='float:left;margin-right:10px;'>
+						<div slot='title'>
+							<span style='margin-top:10px;display: inline-block;'>用户{{index + 1}}</span>
+							<p style='font-size:12px;color:#aaa;'>您有{{index + 1}}条消息</p>
+						</div>
+					</mt-cell>
+				</mt-tab-container-item>
+				
+				<mt-tab-container-item id="book">
+					<mt-index-list>
+					  <mt-index-section v-for='i in 25' :index="String.fromCharCode((64+i))">
+					    <mt-cell :title='String.fromCharCode((64+i)) + "aron"'></mt-cell>
+					    <mt-cell :title='String.fromCharCode((64+i)) + "lden"'></mt-cell>
+					    <mt-cell :title='String.fromCharCode((64+i)) + "ustin"'></mt-cell>
+					  </mt-index-section>
+					</mt-index-list>
+				</mt-tab-container-item>
+				
+				<mt-tab-container-item id="find">
+					<div style="margin:15px 0">
+						<mt-cell title="朋友圈" is-link>
+							<i slot="icon" class='iconfont icon-pengyouquan' style='color:#1296db'></i>
+						</mt-cell>
+					</div>
+					<div style="margin:15px 0">
+						<mt-cell title="扫一扫" is-link>
+							<i slot="icon" class='iconfont icon-saoyisao' style='color:#1296db'></i>
+						</mt-cell>
+						<mt-cell title="摇一摇" is-link>
+							<i slot="icon" class='iconfont icon-yaoyiyao' style='color:#1296db'></i>
+						</mt-cell>
+					</div>
+					<div style="margin:15px 0">
+						<mt-cell title="附近的人" is-link>
+							<i slot="icon" class='iconfont icon-fujinderen' style='color:#1296db'></i>
+						</mt-cell>
+						<mt-cell title="漂流瓶" is-link>
+							<i slot="icon" class='iconfont icon-12' style='color:#1296db'></i>
+						</mt-cell>
+					</div>
+					<div style="margin:15px 0">
+						<mt-cell title="购物" is-link>
+							<i slot="icon" class='iconfont icon-gouwu-copy' style='color:#1296db'></i>
+						</mt-cell>
+						<mt-cell title="游戏" is-link>
+							<i slot="icon" class='iconfont icon-youxi' style='color:#1296db'></i>
+						</mt-cell>
+					</div>
+					<mt-cell title="小程序" is-link>
+						<i slot="icon" class='iconfont icon-xiaochengxu' style='color:#1296db'></i>
+					</mt-cell>
+				</mt-tab-container-item>
+				
+				<mt-tab-container-item id="my">
+					<mt-cell style='margin:10px 0;padding:10px 0' is-link>
+						<img slot='icon' src="http://iph.href.lu/60x60" width="60" height="60" style='float:left;margin-right:10px;'>
+						<div slot='title'>
+							<span style='margin-top:10px;display: inline-block;'>Hope</span>
+							<p style='font-size:12px;color:#aaa;'>微信号：ssxsyyadw</p>
+						</div>
+					</mt-cell>
+					<mt-cell title="钱包" is-link>
+					  <i slot="icon" class='iconfont icon-qianbao' style='color:#1296db'></i> 
+					</mt-cell>
+					<div style="margin:15px 0">
+						<mt-cell title="收藏" is-link>
+							<i slot="icon" class='iconfont icon-dongtaiyemianxiaotubiao03' style='color:#1296db'></i>
+						</mt-cell>
+						<mt-cell title="相册" is-link>
+							<i slot="icon" class='iconfont icon-xiangce' style='color:#1296db'></i>
+						</mt-cell>
+					</div>
+					<div style='margin:15px 0'>
+						<mt-cell title="卡包" is-link>
+						  <i slot="icon" class='iconfont icon-iconqiabao' style='color:#1296db'></i>
+						</mt-cell>
+						<mt-cell title="表情" is-link>
+						  <i slot="icon" class='iconfont icon-dongtaiyemianxiaotubiao03' style='color:#1296db'></i>
+						</mt-cell>
+					</div>
+					<mt-cell title="设置" is-link>
+					  <i slot="icon" class='iconfont icon-zhanghushezhi' style='color:#1296db'></i>
+					</mt-cell>
+				</mt-tab-container-item>
+				
+			</mt-tab-container>
+			
+			<mt-tabbar v-model="selected" fixed>
+				<mt-tab-item id="message">
+					<i slot="icon" class='iconfont icon-xiaoxi1'></i>
+					消息
+				</mt-tab-item>
+				<mt-tab-item id="book">
+					<i slot="icon" class='iconfont icon-address-book-copy'></i>
+					通讯录
+				</mt-tab-item>
+				<mt-tab-item id="find">
+					<i slot="icon" class='iconfont icon-faxian1'></i> 
+					发现
+				</mt-tab-item>
+				<mt-tab-item id="my">
+					<i slot="icon" class='iconfont icon-wo'></i> 
+					我
+				</mt-tab-item>
+			</mt-tabbar>
+		</div>
+		<script src="https://unpkg.com/vue@2.3.4/dist/vue.min.js"></script>
+		<script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+		<script type="text/javascript">
+			new Vue({
+				el: '#app',
+				data: {
+					selected: 'message'
+				}
+			})
+		</script>
+	</body>
+	
+</html>
