@@ -14,6 +14,9 @@
 		.mint-cell-allow-right{
 			display: none;
 		}
+		.mint-cell-wrapper{
+			padding:0px 12px;
+		}
 		.icon-pengyouquan{
 			margin:0 -7px;
 		}
@@ -38,11 +41,11 @@
 			<mt-tab-container class="page-tabbar-container" v-model="selected">
 				
 				<mt-tab-container-item id="message">
-					<mt-cell v-for="(n, index) in 12" style='padding:10px 0' is-link>
-						<img slot='icon' src="http://iph.href.lu/60x60" width="60" height="60" style='float:left;margin-right:10px;'>
-						<div slot='title'>
-							<span style='margin-top:10px;display: inline-block;'>用户{{index + 1}}</span>
-							<p style='font-size:12px;color:#aaa;'>您有{{index + 1}}条消息</p>
+					<mt-cell v-for="(n, index) in 12"  is-link>
+						<img slot='icon' src="http://iph.href.lu/60x60" width="60" height="60" style='float:left;margin:10px 10px 10px 0;'>
+						<div slot='title' style='padding-top:20px;'>
+							<div style='display: inline-block;'>用户{{index + 1}}</div>
+							<div style='font-size:12px;color:#aaa;padding:7px 0'>您有{{index + 1}}条消息</div>
 						</div>
 					</mt-cell>
 				</mt-tab-container-item>
@@ -93,11 +96,11 @@
 				</mt-tab-container-item>
 				
 				<mt-tab-container-item id="my">
-					<mt-cell style='margin:10px 0;padding:10px 0' is-link>
-						<img slot='icon' src="http://iph.href.lu/60x60" width="60" height="60" style='float:left;margin-right:10px;'>
-						<div slot='title'>
-							<span style='margin-top:10px;display: inline-block;'>Hope</span>
-							<p style='font-size:12px;color:#aaa;'>微信号：ssxsyyadw</p>
+					<mt-cell style='margin:10px 0;' is-link>
+						<img slot='icon' src="http://iph.href.lu/60x60" width="60" height="60" style='float:left;margin:10px 10px 10px 0;'>
+						<div slot='title' style='padding-top:20px;'>
+							<div style='display: inline-block;'>Hope</div>
+							<div style='font-size:12px;color:#aaa;padding:7px 0'>微信号：ssxsyyadw</div>
 						</div>
 					</mt-cell>
 					<mt-cell title="钱包" is-link>
