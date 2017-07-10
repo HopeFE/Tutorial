@@ -8,6 +8,9 @@
 		<link rel="stylesheet" href="fonts/iconfont.css" />
 	</head>
 	<style type="text/css">
+		[v-cloak] {
+		  display: none;
+		}
 		.iconfont{
 			font-size:24px;
 		}
@@ -37,7 +40,7 @@
 		}
 	</style>
 	<body>
-		<div id="app">
+		<div id="app" v-cloak>
 			<mt-tab-container class="page-tabbar-container" v-model="selected">
 				
 				<mt-tab-container-item id="message">
